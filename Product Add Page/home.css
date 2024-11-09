@@ -1,0 +1,60 @@
+.radio_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
+    padding: 30px;
+}
+
+.radios {
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 12px;
+    font-size: larger;
+}
+
+
+.step {
+
+    display: flex;
+
+}
+
+#step1 {
+
+    display: block;
+
+}
+
+
+#step2 , #step3 , #step4 , #step5 {
+
+    display : none ;
+
+}
+
+
+
+.steps_container{
+    margin: 50px;
+    padding: 30px;
+}
+
+
+
+.required{
+    font-weight: bold;
+    color: red;
+}
+
+
+
+.table_container{
+    margin: 20px;
+}
