@@ -276,42 +276,56 @@ document.getElementById('productForm').onsubmit = function(event) {
     var filesProcessed = 0;
     var totalFiles = 0;
 
-    // Process each form field
+
+
     formData.forEach((value, key) => {
         if (value instanceof File) {
             totalFiles++;
 
-            // Convert file to Base64 string and store
+
+
             var reader = new FileReader();
             reader.onload = function(e) {
-                formDataObject[key] = e.target.result;  // Store the Base64 string
+                formDataObject[key] = e.target.result;  
                 filesProcessed++;
 
-                // After the file is converted, check if all files are processed
+
+
                 if (filesProcessed === totalFiles) {
-                    // All files processed, now save the data
+
                     existingEntries.push(formDataObject);
                     localStorage.setItem('productFormData', JSON.stringify(existingEntries));
                     alert('Form Submitted Successfully');
 
-                    // Reload the page after storing data
+                    document.getElementById('productForm').reset();
+
                     window.location.reload();
                 }
             };
-            reader.readAsDataURL(value); // Start the file reading
+            reader.readAsDataURL(value); 
         } else {
             formDataObject[key] = value;
         }
     });
 
-    // If no files were present, save the data immediately
+
+
     if (totalFiles === 0) {
+
         existingEntries.push(formDataObject);
         localStorage.setItem('productFormData', JSON.stringify(existingEntries));
         alert('Form Submitted Successfully');
+
+
+        document.getElementById('productForm').reset();
+
+
         window.location.reload();
     }
 };
+
+
+
 
 
 
